@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Amazon PPC Tools: Bid &amp; ACoS Calculators</title>
+<meta name="description" content="Three free Amazon PPC calculators: placement bid multiplier, breakeven ACoS and max CPC, and a keyword scale-or-pause tool. No signup.">
+<link rel="canonical" href="https://scalevora-tau.vercel.app/tools">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070A12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Scalevora">
+<meta property="og:url" content="https://scalevora-tau.vercel.app/tools">
+<meta property="og:title" content="Free Amazon PPC Tools &mdash; Placement Bid, Breakeven ACoS, Keyword Decisions">
+<meta property="og:description" content="Three free Amazon PPC calculators. No signup, nothing leaves your browser.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Amazon PPC Tools &mdash; Scalevora">
+<meta name="twitter:description" content="Placement bid multiplier, breakeven ACoS and keyword decision calculators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://scalevora-tau.vercel.app/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://scalevora-tau.vercel.app/tools"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Free Amazon PPC Tools","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Amazon Placement Bid Multiplier Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#placement","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Breakeven ACoS and Max CPC Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#breakeven","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Amazon PPC Keyword Decision Tool","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#decision","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}}]}</script>
+
+<!-- Scalevora site v2.0 | built 2026-10-27 | Adds demo videos, /tools, /blog and full SEO foundation. -->
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="/" class="logo"><span class="logo-mark"></span>Scalevora</a>
+    <div class="nav-links" id="navlinks">
+      <a href="/#services">Services</a>
+      <a href="/#watch">Watch</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="/#contact" class="nav-cta">Free Account Audit</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<header class="pagehead">
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a><span>/</span>Tools</div>
+    <h1>Free Amazon PPC tools</h1>
+    <p class="lede">Three calculators we use inside real accounts, rebuilt so you can run them yourself. No signup, no email wall &mdash; everything runs in your browser and nothing is sent anywhere.</p>
+  </div>
+</header>
+
+<section style="padding-top:62px">
+  <div class="wrap" style="max-width:980px">
+
+    <div class="tool reveal" id="placement">
+      <div class="tool-head">
+        <div class="tool-ico"><svg viewBox="0 0 24 24"><path d="M3 18V9M9 18V5M15 18v-7M21 18v-4"/></svg></div>
+        <div>
+          <h2>Placement bid multiplier calculator</h2>
+          <p class="tool-sub">Top of Search usually converts better and costs more. This works out the placement adjustment that pulls that placement back to your target ACoS, instead of guessing at 50% and hoping.</p>
+        </div>
+      </div>
+      <div class="tool-io">
+        <div class="tool-fields">
+          <div class="fld"><label>Current ACoS at this placement (%)</label>
+            <input type="number" id="p_acos" value="42" min="0.1" step="0.1">
+            <div class="hint">From the Placement report, not the campaign average.</div></div>
+          <div class="fld"><label>Your target ACoS (%)</label>
+            <input type="number" id="p_target" value="28" min="0.1" step="0.1"></div>
+          <div class="fld"><label>Placement adjustment currently set (%)</label>
+            <input type="number" id="p_cur" value="0" min="0" step="1">
+            <div class="hint">Enter 0 if you have never changed it.</div></div>
+          <div class="fld"><label>Base keyword bid ($)</label>
+            <input type="number" id="p_bid" value="1.20" min="0.02" step="0.01"></div>
+        </div>
+        <div class="tool-out">
+          <div class="out-row"><span class="k">Recommended adjustment</span><span class="v" id="p_out_mult">&mdash;</span></div>
+          <div class="out-row"><span class="k">Effective bid now</span><span class="v" id="p_out_now">&mdash;</span></div>
+          <div class="out-row"><span class="k">Effective bid after</span><span class="v" id="p_out_new">&mdash;</span></div>
+          <div class="out-row"><span class="k">Change</span><span class="v" id="p_out_delta">&mdash;</span></div>
+          <div class="verdict idle" id="p_verdict"><b>Enter your numbers</b>The calculator updates as you type.</div>
+        </div>
+      </div>
+      <p class="tool-note"><strong>How it works:</strong> ACoS moves roughly in proportion to bid, so the ratio of target ACoS to current ACoS gives the factor your effective bid should move by. That factor is applied to your current effective bid (base bid &times; current adjustment) and converted back into a placement percentage. Amazon caps placement adjustments at 900%.</p>
+    </div>
+
+    <div class="tool reveal" id="breakeven">
+      <div class="tool-head">
+        <div class="tool-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 .9-5 2.8c0 4.3 10 2.2 10 6.4 0 2-2.2 3.1-5 3.1s-5-1.1-5-3.1"/></svg></div>
+        <div>
+          <h2>Breakeven ACoS &amp; max CPC calculator</h2>
+          <p class="tool-sub">The single number that decides whether advertising builds profit or quietly eats it. Work out where you stop making money, then what you can actually afford to pay per click.</p>
+        </div>
+      </div>
+      <div class="tool-io">
+        <div class="tool-fields">
+          <div class="fld"><label>Selling price ($)</label>
+            <input type="number" id="b_price" value="34.99" min="0.01" step="0.01"></div>
+          <div class="fld"><label>Cost of goods ($)</label>
+            <input type="number" id="b_cogs" value="9.50" min="0" step="0.01">
+            <div class="hint">Landed cost per unit including freight and duty.</div></div>
+          <div class="fld"><label>Amazon referral fee (%)</label>
+            <input type="number" id="b_ref" value="15" min="0" step="0.5"></div>
+          <div class="fld"><label>FBA / fulfilment fee ($)</label>
+            <input type="number" id="b_fba" value="5.80" min="0" step="0.01"></div>
+          <div class="fld"><label>Conversion rate (%)</label>
+            <input type="number" id="b_cvr" value="12" min="0.1" step="0.1">
+            <div class="hint">Unit session percentage from Business Reports.</div></div>
+          <div class="fld"><label>Profit margin you want to keep (%)</label>
+            <input type="number" id="b_margin" value="10" min="0" step="0.5"></div>
+        </div>
+        <div class="tool-out">
+          <div class="out-row"><span class="k">Profit before ads</span><span class="v" id="b_out_profit">&mdash;</span></div>
+          <div class="out-row"><span class="k">Breakeven ACoS</span><span class="v" id="b_out_be">&mdash;</span></div>
+          <div class="out-row"><span class="k">Target ACoS</span><span class="v" id="b_out_target">&mdash;</span></div>
+          <div class="out-row"><span class="k">Max CPC at breakeven</span><span class="v" id="b_out_maxcpc">&mdash;</span></div>
+          <div class="out-row"><span class="k">Max CPC at target</span><span class="v" id="b_out_tcpc">&mdash;</span></div>
+          <div class="verdict idle" id="b_verdict"><b>Enter your numbers</b>The calculator updates as you type.</div>
+        </div>
+      </div>
+      <p class="tool-note"><strong>How it works:</strong> Profit before ads is price minus COGS, referral fee and fulfilment. Breakeven ACoS is that profit as a percentage of price &mdash; spend more than this on ads and the sale loses money. Max CPC is breakeven ACoS &times; price &times; conversion rate, because you pay for every click but only a fraction convert.</p>
+    </div>
+
+    <div class="tool reveal" id="decision">
+      <div class="tool-head">
+        <div class="tool-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg></div>
+        <div>
+          <h2>PPC keyword decision tool</h2>
+          <p class="tool-sub">Scale it, trim the bid, or kill it. Put in a search term&rsquo;s numbers and get a decision with the reasoning &mdash; including whether you even have enough clicks to judge it yet.</p>
+        </div>
+      </div>
+      <div class="tool-io">
+        <div class="tool-fields">
+          <div class="fld"><label>Clicks</label>
+            <input type="number" id="d_clicks" value="34" min="0" step="1"></div>
+          <div class="fld"><label>Spend ($)</label>
+            <input type="number" id="d_spend" value="41.20" min="0" step="0.01"></div>
+          <div class="fld"><label>Orders</label>
+            <input type="number" id="d_orders" value="3" min="0" step="1"></div>
+          <div class="fld"><label>Sales ($)</label>
+            <input type="number" id="d_sales" value="104.97" min="0" step="0.01"></div>
+          <div class="fld"><label>Target ACoS (%)</label>
+            <input type="number" id="d_target" value="28" min="0.1" step="0.1"></div>
+          <div class="fld"><label>Account conversion rate (%)</label>
+            <input type="number" id="d_cvr" value="12" min="0.1" step="0.1">
+            <div class="hint">Used to judge whether a zero-order term has had a fair chance.</div></div>
+        </div>
+        <div class="tool-out">
+          <div class="out-row"><span class="k">ACoS</span><span class="v" id="d_out_acos">&mdash;</span></div>
+          <div class="out-row"><span class="k">Conversion rate</span><span class="v" id="d_out_cvr">&mdash;</span></div>
+          <div class="out-row"><span class="k">Cost per click</span><span class="v" id="d_out_cpc">&mdash;</span></div>
+          <div class="out-row"><span class="k">Cost per order</span><span class="v" id="d_out_cpo">&mdash;</span></div>
+          <div class="out-row"><span class="k">Clicks for a fair test</span><span class="v" id="d_out_need">&mdash;</span></div>
+          <div class="verdict idle" id="d_verdict"><b>Enter your numbers</b>The calculator updates as you type.</div>
+        </div>
+      </div>
+      <p class="tool-note"><strong>How it works:</strong> A term with no orders is only a loser once it has had a fair test &mdash; roughly twice the clicks implied by your conversion rate. Below that it is noise, not evidence. Above it, with no orders, the term is paying for traffic that does not buy. Where orders exist, the decision comes from ACoS against your target with a tolerance band, because trimming a bid is usually better than deleting the data.</p>
+    </div>
+
+    <div class="endcta reveal">
+      <h3>Want this run across your whole account?</h3>
+      <p>These three calculations applied across thousands of search terms is roughly what the first week of an audit looks like. We will do it on your account and write up what we find, free.</p>
+      <a href="/#contact" class="btn btn-p">Get Your Free Audit
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="/" class="logo"><span class="logo-mark"></span>Scalevora</a>
+        <p>A specialist Amazon and marketplace growth partner for brands selling into the US, UK, EU, Canada and Australia.</p>
+      </div>
+      <div class="f-col">
+        <h5>Free Tools</h5>
+        <a href="/tools#placement">Placement Bid Calculator</a>
+        <a href="/tools#breakeven">Breakeven ACoS Calculator</a>
+        <a href="/tools#decision">PPC Keyword Decision Tool</a>
+      </div>
+      <div class="f-col">
+        <h5>Blog</h5>
+        <a href="/blog/q4-amazon-ppc-budget-pacing">Q4 budget pacing</a>
+        <a href="/blog/q5-amazon-selling-after-christmas">Selling in Q5</a>
+        <a href="/blog/january-amazon-ppc-reset">The January reset</a>
+      </div>
+      <div class="f-col">
+        <h5>Company</h5>
+        <a href="/#about">About Us</a>
+        <a href="/#process">Our Process</a>
+        <a href="/#faq">FAQ</a>
+        <a href="mailto:atiqueulh@gmail.com">Contact</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>&copy; 2026 Scalevora. All rights reserved.</span>
+      <span>Calculators are guidance, not guarantees. Your own account data always wins.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/page.js?v=20261027"></script>
+<script src="/assets/tools.js?v=20261027"></script>
+</body>
+</html>
