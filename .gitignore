@@ -1,0 +1,17 @@
+# Vercel
+.vercel
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Dependencies (none today, but keeps future noise out)
+node_modules/
+
+# Archived version snapshots - not part of the deployed site
+Versions/
