@@ -19,11 +19,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=20261027">
+<link rel="stylesheet" href="/assets/site.css?v=20261028b">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://scalevora-tau.vercel.app/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://scalevora-tau.vercel.app/tools"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Free Amazon PPC Tools","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Amazon Placement Bid Multiplier Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#placement","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Breakeven ACoS and Max CPC Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#breakeven","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Amazon PPC Keyword Decision Tool","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://scalevora-tau.vercel.app/tools#decision","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}}]}</script>
 
-<!-- Scalevora site v2.0 | built 2026-10-27 | Adds demo videos, /tools, /blog and full SEO foundation. -->
+
+<!-- Scalevora site v2.1 | built 2026-10-28 | Adds tool usage gate, custom-build offer and combined optimiser enquiry. -->
 </head>
 <body>
 
@@ -47,12 +48,28 @@
   <div class="wrap">
     <div class="crumb"><a href="/">Home</a><span>/</span>Tools</div>
     <h1>Free Amazon PPC tools</h1>
-    <p class="lede">Three calculators we use inside real accounts, rebuilt so you can run them yourself. No signup, no email wall &mdash; everything runs in your browser and nothing is sent anywhere.</p>
+    <p class="lede">Three calculators we use inside real accounts, rebuilt so you can run them yourself. Everything runs in your browser and nothing is sent anywhere.</p>
+    <p class="gate-count" data-uses-left><b>2</b> free calculations left</p>
   </div>
 </header>
 
 <section style="padding-top:62px">
   <div class="wrap" style="max-width:980px">
+
+    <div class="offer lead reveal">
+      <div class="offer-top">
+        <span class="offer-tag"><span class="blip"></span>Built to order</span>
+      </div>
+      <h2>Need a tool built for the way your account actually works?</h2>
+      <p>The three calculators below are the general-purpose versions. Most accounts have something specific that no off-the-shelf tool handles &mdash; a bulk search term classifier for your own report format, a restock model that knows your lead times, a bid script tied to your margin bands.</p>
+      <p><strong>We have an in-house development team</strong> alongside the marketplace side, so we build these properly rather than wiring together spreadsheets. Tell us what the problem is and we will say whether it is worth building, roughly how long it takes, and what it costs &mdash; before you commit to anything.</p>
+      <div class="offer-acts">
+        <button class="btn btn-p" type="button" data-enquiry="custom-tool">Tell us what you need
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="offer-note">No cost to ask. We will tell you if it is not worth building.</p>
+      </div>
+    </div>
 
     <div class="tool reveal" id="placement">
       <div class="tool-head">
@@ -159,6 +176,35 @@
       <p class="tool-note"><strong>How it works:</strong> A term with no orders is only a loser once it has had a fair test &mdash; roughly twice the clicks implied by your conversion rate. Below that it is noise, not evidence. Above it, with no orders, the term is paying for traffic that does not buy. Where orders exist, the decision comes from ACoS against your target with a tolerance band, because trimming a bid is usually better than deleting the data.</p>
     </div>
 
+    <div class="offer reveal" id="combined">
+      <div class="offer-top">
+        <span class="offer-tag"><span class="blip"></span>On request</span>
+      </div>
+      <h2>One optimiser instead of three calculators.</h2>
+      <p>Running the three tools above means moving numbers between them by hand, one search term at a time. The combined version does all three passes across your whole account in one go, from a single export.</p>
+      <div class="offer-grid">
+        <div class="offer-item">
+          <h4>Placement optimisation</h4>
+          <p>Every campaign&rsquo;s placement adjustments recalculated against target ACoS, including the cases where the base bid is what needs to move.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Bid optimisation</h4>
+          <p>Breakeven and target ACoS applied per ASIN, so each keyword gets a ceiling derived from its own margin rather than one account-wide guess.</p>
+        </div>
+        <div class="offer-item">
+          <h4>Bleeder detection</h4>
+          <p>Search terms spending with nothing to show, separated from terms that simply have not had a fair test yet &mdash; the distinction that decides whether cutting costs or saves money.</p>
+        </div>
+      </div>
+      <p>It is set up against your own account data rather than sold as a generic download, so it is offered on request rather than as a public tool.</p>
+      <div class="offer-acts">
+        <button class="btn btn-p" type="button" data-enquiry="combined-tool">Email us about the combined tool
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="offer-note">Tell us the account size and we will send details.</p>
+      </div>
+    </div>
+
     <div class="endcta reveal">
       <h3>Want this run across your whole account?</h3>
       <p>These three calculations applied across thousands of search terms is roughly what the first week of an audit looks like. We will do it on your account and write up what we find, free.</p>
@@ -204,7 +250,8 @@
   </div>
 </footer>
 
-<script src="/assets/page.js?v=20261027"></script>
-<script src="/assets/tools.js?v=20261027"></script>
+<script src="/assets/page.js?v=20261028b"></script>
+<script src="/assets/tools.js?v=20261028b"></script>
+<script src="/assets/leads.js?v=20261028b"></script>
 </body>
 </html>
