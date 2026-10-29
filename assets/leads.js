@@ -249,6 +249,7 @@
   var timer = null, lastCount = 0;
   function noteUse() {
     if (state.unlocked || locked()) return;
+    if (window.__svSuppressUse) return;   // clearing fields is not a calculation
     clearTimeout(timer);
     timer = setTimeout(function () {
       var now = Date.now();

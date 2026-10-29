@@ -165,3 +165,25 @@
   if ($('b_price')) { bind(B, breakeven); }
   if ($('d_clicks')) { bind(D, decision); }
 })();
+
+/* "Clear fields" — blanks one tool's inputs so the calculator visibly resets to
+   its empty state. Flags the dispatch so the free-use counter is not charged
+   for clearing (see leads.js). */
+(function () {
+  document.querySelectorAll('.ex-clear').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var tool = btn.closest('.tool');
+      if (!tool) return;
+      window.__svSuppressUse = true;
+      tool.querySelectorAll('.tool-fields input').forEach(function (f) {
+        f.value = '';
+        f.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+      setTimeout(function () { window.__svSuppressUse = false; }, 2000);
+      var first = tool.querySelector('.tool-fields input');
+      if (first) first.focus();
+      btn.textContent = 'Cleared';
+      setTimeout(function () { btn.textContent = 'Clear fields'; }, 1500);
+    });
+  });
+})();

@@ -379,3 +379,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--sur
 .gate-count{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:14px}
 .gate-count b{color:var(--copper);font-weight:500}
 @media(prefers-reduced-motion:reduce){.gate-mask{backdrop-filter:none;background:rgba(12,18,32,.93)}}
+
+/* ===== Example-figures bar ===== */
+.ex-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:22px;padding:10px 14px;border:1px dashed var(--line2);border-radius:11px;background:rgba(224,133,74,.05)}
+.ex-note{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);font-weight:300;min-width:0}
+.ex-dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 3px rgba(224,133,74,.18)}
+.ex-clear{flex:0 0 auto;font-family:'Inter',system-ui,sans-serif;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid var(--line2);background:var(--ink);color:var(--muted);cursor:pointer}
+.ex-clear:hover{color:var(--text);border-color:var(--copper)}
+.ex-clear:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
+.tool-io{margin-top:14px}
+@media(max-width:520px){.ex-bar{padding:10px 12px}.ex-note{font-size:12.5px}}
